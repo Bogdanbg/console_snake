@@ -12,6 +12,9 @@ namespace console_snake
         public int y;
         public char symbol;
 
+
+        public Point() { }
+
         public Point(int _x,int _y,char _symbol) {
             x = _x;
             y = _y;
