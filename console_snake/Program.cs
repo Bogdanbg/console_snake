@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace console_snake
 {
@@ -7,8 +8,7 @@ namespace console_snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1,3,'@');
-            Point p2 = new Point(2,4,'#');
+            
             Console.SetBufferSize(80, 25);
 
             HorizontalLine upLine = new HorizontalLine(0,78,0,'+');
@@ -21,6 +21,16 @@ namespace console_snake
             leftLine.Draw();
             rigthLine.Draw();
 
+            Point p = new Point(4, 5, '*');
+            Snake snake = new Snake(p, 4, Direction.RIGTH);
+            snake.Draw();
+            int i = 0;
+            while (i < 10)
+            {
+                snake.Move();
+                i++;
+                Thread.Sleep(300);
+            }
             Console.ReadLine();
         }
 
