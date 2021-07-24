@@ -8,7 +8,7 @@ namespace console_snake
 {
     class Point
     {
-        public int x;
+        public int x; 
         public int y;
         public char symbol;
 
@@ -28,24 +28,6 @@ namespace console_snake
             symbol = point.symbol;
         }
 
-   /*     public void Move(int offset, Direction direction) {
-            if (direction == Direction.RIGTH)
-            {
-                x = x + offset;
-            }
-            else if (direction == Direction.LEFT)
-            {
-                x = x - offset;
-            }
-            else if (direction == Direction.UP)
-            {
-                y = y + offset;
-            }
-            else if (direction == Direction.DOWN) {
-                y = y - offset;
-            }
-                
-        }*/
 
         public void Move(int offset, Direction direction) {
             switch (direction) {
@@ -57,10 +39,10 @@ namespace console_snake
                     x = x - offset;
                     break;
                 case Direction.UP:
-                    y = y + offset;
+                    y = y - offset;
                     break;
                 case Direction.DOWN:
-                    y = y - offset;
+                    y = y + offset;
                     break;
             }
         }

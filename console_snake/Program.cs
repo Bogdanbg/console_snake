@@ -24,16 +24,17 @@ namespace console_snake
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGTH);
             snake.Draw();
-            int i = 0;
-            while (i < 10)
+            while (true) 
             {
+                if (Console.KeyAvailable)
+                {
+                   ConsoleKeyInfo consoleKey = Console.ReadKey();
+                    snake.HandleKey(consoleKey.Key);
+                }
+                Thread.Sleep(100);
                 snake.Move();
-                i++;
-                Thread.Sleep(300);
             }
             Console.ReadLine();
-        }
-
-        
+        }  
     }
 }

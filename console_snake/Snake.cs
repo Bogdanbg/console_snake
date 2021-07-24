@@ -39,5 +39,23 @@ namespace console_snake
             nextPoint.Move(1, direction);
             return nextPoint;
         }
+
+        public void HandleKey(ConsoleKey consoleKey) {
+            switch (consoleKey)
+            {
+                case ConsoleKey.LeftArrow:
+                    direction = Direction.LEFT;
+                    break;
+                case ConsoleKey.RightArrow:
+                    direction = Direction.RIGTH;
+                    break;
+                case ConsoleKey.UpArrow:
+                    direction = Direction.UP;
+                    break;
+                case ConsoleKey.DownArrow:
+                    direction = Direction.DOWN;
+                    break;
+            }
+        }
     }
 }
