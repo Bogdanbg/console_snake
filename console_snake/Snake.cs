@@ -40,6 +40,18 @@ namespace console_snake
             return nextPoint;
         }
 
+        internal bool Eat(Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.symbol = head.symbol;
+                pointList.Add(food);
+                return true;
+            }
+            else { return false; }
+        }
+
         public void HandleKey(ConsoleKey consoleKey) {
             switch (consoleKey)
             {

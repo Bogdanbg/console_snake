@@ -8,17 +8,17 @@ namespace console_snake
 {
     class Point
     {
-        public int x; 
+        public int x;
         public int y;
         public char symbol;
 
 
         public Point() { }
 
-        public Point(int _x,int _y,char _symbol) {
-            x = _x;
-            y = _y;
-            symbol = _symbol;
+        public Point(int x, int y, char symbol) {
+            this.x = x;
+            this.y = y;
+            this.symbol = symbol;
         }
 
         public Point(Point point) {
@@ -26,6 +26,10 @@ namespace console_snake
             x = point.x;
             y = point.y;
             symbol = point.symbol;
+        }
+
+        public bool IsHit(Point point) {
+            return point.x == this.x && point.y == this.y;
         }
 
 
