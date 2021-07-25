@@ -69,5 +69,23 @@ namespace console_snake
                     break;
             }
         }
+
+        public override void Draw()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            foreach (Point point in pointList) {
+                point.Draw();
+            }
+        }
+
+        internal bool IsHitTail() {
+            var head = pointList.Last();
+            for (int i = 0; i < pointList.Count - 2; i++)
+            {
+                if (head.IsHit(pointList[i])) { return true; }
+
+            }
+            return false;
+        }
     }
 }
